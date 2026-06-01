@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InAmigos - Transforming Communities, Empowering Lives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1b5e47;
+            --primary-light: #2d8e6f;
+            --primary-dark: #0f3a2f;
+            --accent: #ff6b35;
+            --accent-light: #ff8a5b;
+            --secondary: #f7b32b;
+            --text-dark: #1a1a1a;
+            --text-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 15px 40px rgba(27, 94, 71, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 { 
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        a {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            font-size: 0.95rem;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            margin-left: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 50%, #e8f4f0 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            color: var(--primary);
+            line-height: 1.15;
+            animation: slideInLeft 1s ease;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(27, 94, 71, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(27, 94, 71, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2.5px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        .hero-image {
+            animation: slideInRight 1s ease 0.2s both;
+        }
+
+        .hero-image-wrapper {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 7rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Introduction Section */
+        .introduction {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .intro-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .highlight-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .intro-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.08);
+        }
+
+        .project-info {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-info h3 {
+            color: var(--accent);
+        }
+
+        .project-info p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            gap: 1.25rem;
+            color: var(--primary);
+        }
+
+        /* Impact Section */
+        .impact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .impact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .impact .section-header h2 {
+            color: white;
+        }
+
+        .impact .section-header h2::after {
+            background: linear-gradient(90deg, var(--secondary), var(--accent-light));
+        }
+
+        .impact .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .impact-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .impact-label {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .impact-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Engagement Section */
+        .engagement {
+            background: var(--bg-light);
+        }
+
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .engagement-card {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .engagement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .engagement-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .engagement-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .engagement-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .engagement-card:hover .engagement-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .engagement-card h3 {
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .engagement-card:hover h3 {
+            color: var(--accent);
+        }
+
+        .engagement-card p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            text-align: center;
+            color: white;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta h2::after {
+            display: none;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+            padding-left: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .intro-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">🌱 InAmigos</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#engage">Engage</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn btn-primary">Donate Now</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: HERO / HOME -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Empowering Communities, Transforming Lives</h1>
+                <p>InAmigos is dedicated to creating sustainable social change through education, healthcare, and community development. Join thousands of volunteers and donors making real impact in underserved communities across India.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">🤝 Join Our Mission</button>
+                    <button class="btn btn-secondary">📚 Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=700&fit=crop" alt="NGO volunteers helping community members">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: INTRODUCTION ABOUT THE NGO -->
+    <section class="introduction" id="about">
+        <div class="section-container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>About InAmigos</h2>
+                    <p>InAmigos (Friends for Positive Change) is a grassroots non-profit organization working since 2015 to improve the quality of life for marginalized communities. We operate with a simple philosophy: every individual deserves access to quality education, healthcare, and economic opportunities.</p>
+                    
+                    <p><strong>Our core values:</strong></p>
+                    <ul style="list-style: none; margin: 1.5rem 0;">
+                        <li style="margin-bottom: 0.8rem;">✅ <strong>Transparency:</strong> Every action is accountable to our community</li>
+                        <li style="margin-bottom: 0.8rem;">✅ <strong>Compassion:</strong> We lead with empathy in all initiatives</li>
+                        <li style="margin-bottom: 0.8rem;">✅ <strong>Sustainability:</strong> Building long-term impact, not quick fixes</li>
+                        <li style="margin-bottom: 0.8rem;">✅ <strong>Community First:</strong> Communities lead their own development</li>
+                        <li>✅ <strong>Innovation:</strong> Using modern solutions for traditional problems</li>
+                    </ul>
+
+                    <p>Since 2015, we have directly impacted over 50,000 lives across 150+ communities in Uttar Pradesh, Bihar, and Madhya Pradesh.</p>
+                </div>
+
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&h=700&fit=crop" alt="InAmigos team working with community">
+                </div>
+            </div>
+
+            <div class="intro-highlights">
+                <div class="highlight-box">
+                    <h4>🎯 Our Mission</h4>
+                    <p>To empower disadvantaged communities by providing equitable access to education, healthcare, and livelihood opportunities through innovative and sustainable programs.</p>
+                </div>
+                <div class="highlight-box">
+                    <h4>✨ Our Vision</h4>
+                    <p>A world where every individual, regardless of socio-economic background, has the opportunity to realize their full potential and contribute meaningfully to society.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: DETAILS OF ONGOING PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Ongoing Projects</h2>
+                <p>Delivering measurable impact through strategic initiatives designed to create lasting change in the communities we serve.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=350&fit=crop" alt="Digital Literacy Program">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Education</span>
+                        <h3>Digital Literacy Program</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2018</p>
+                        <p>Empowering rural students with computer skills, coding knowledge, and online safety awareness. We've trained 3,500+ students in digital literacy and online entrepreneurship.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=350&fit=crop" alt="Community Health Initiative">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Healthcare</span>
+                        <h3>Community Health Initiative</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2016</p>
+                        <p>Providing preventive healthcare, health camps, maternal care, and disease awareness. We've reached 25,000+ people with healthcare services and health education.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=350&fit=crop" alt="Green Earth Campaign">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Environment</span>
+                        <h3>Green Earth Campaign</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2017</p>
+                        <p>Tree plantation, waste management, and environmental education. We've planted 15,000+ trees and trained communities in sustainable living practices.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=350&fit=crop" alt="Women Empowerment">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Empowerment</span>
+                        <h3>Women Empowerment Program</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2015</p>
+                        <p>Skill development, economic independence, and rights awareness for women. We've supported 500+ women entrepreneurs with microloans and training.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=350&fit=crop" alt="Vocational Training">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Skills</span>
+                        <h3>Vocational Skill Training</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2019</p>
+                        <p>Job-ready training in tailoring, electrical work, plumbing, and carpentry. We've trained 1,200+ youth with 85% employment rate within 6 months.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=350&fit=crop" alt="Youth Leadership">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Leadership</span>
+                        <h3>Youth Leadership Program</h3>
+                        <p><strong>Duration:</strong> Ongoing since 2020</p>
+                        <p>Leadership development, mentorship, and community mobilization training for youth. We've trained 400+ young leaders who are now change agents in their communities.</p>
+                        <a href="#" class="project-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SOCIAL IMPACT & PURPOSE -->
+    <section class="impact" id="impact">
+        <div class="section-container impact-content">
+            <div class="section-header">
+                <h2>Our Social Impact</h2>
+                <p>Measurable outcomes proving our commitment to creating real, lasting change in communities across India.</p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">50K+</div>
+                    <div class="impact-label">Lives Directly Impacted</div>
+                    <div class="impact-description">Through healthcare, education, and livelihood programs since 2015</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">150+</div>
+                    <div class="impact-label">Communities Reached</div>
+                    <div class="impact-description">Across rural areas in Uttar Pradesh, Bihar, and Madhya Pradesh</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">5K+</div>
+                    <div class="impact-label">Students Educated</div>
+                    <div class="impact-description">In digital literacy, vocational skills, and online entrepreneurship</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">500+</div>
+                    <div class="impact-label">Women Entrepreneurs</div>
+                    <div class="impact-description">Supported with training, microloans, and business mentorship</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">15K+</div>
+                    <div class="impact-label">Trees Planted</div>
+                    <div class="impact-description">Contributing to environmental sustainability and green initiatives</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1000+</div>
+                    <div class="impact-label">Active Volunteers</div>
+                    <div class="impact-description">Passionate individuals dedicated to community development</div>
+                </div>
+            </div>
+
+            <!-- Purpose Section -->
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: white; margin-bottom: 2rem;">Why Our Projects Matter</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.1rem;">🎓 Education Gap</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9);">50% of rural children drop out before high school. Our programs keep them in school and prepare them for the digital economy.</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.1rem;">💚 Health Crisis</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9);">Rural areas lack basic healthcare. Our clinics and health camps save lives and prevent preventable diseases.</p>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.15);">
+                        <h4 style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.1rem;">💼 Employment Challenge</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9);">Youth unemployment is at 23%. Our vocational training creates skilled workers and reduces poverty through employment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CALL-TO-ACTION & ENGAGEMENT -->
+    <section class="engagement" id="engage">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>How You Can Make a Difference</h2>
+                <p>Join thousands of change-makers committed to creating lasting impact in communities. Every contribution matters.</p>
+            </div>
+
+            <div class="engagement-grid">
+                <!-- CTA 1: Volunteer -->
+                <div class="engagement-card">
+                    <div class="engagement-icon">🤝</div>
+                    <h3>Volunteer With Us</h3>
+                    <p>Share your skills, time, and passion with communities that need it most. Whether you're a teacher, doctor, engineer, or just someone who cares – we have a role for you.</p>
+                    <button class="btn btn-primary">Become a Volunteer</button>
+                </div>
+
+                <!-- CTA 2: Donate -->
+                <div class="engagement-card">
+                    <div class="engagement-icon">💝</div>
+                    <h3>Donate & Support</h3>
+                    <p>Your financial contribution directly impacts lives. ₹500 provides a month of digital training, ₹2000 covers a health checkup for 10 people, ₹5000 provides vocational training for one person.</p>
+                    <button class="btn btn-primary">Donate Now</button>
+                </div>
+
+                <!-- CTA 3: Advocate -->
+                <div class="engagement-card">
+                    <div class="engagement-icon">📢</div>
+                    <h3>Spread Awareness</h3>
+                    <p>Share our mission with your network. Follow us on social media, share our stories, and help us reach more people. Advocacy is a powerful tool for change.</p>
+                    <button class="btn btn-primary">Share Our Story</button>
+                </div>
+
+                <!-- CTA 4: Partner -->
+                <div class="engagement-card">
+                    <div class="engagement-icon">🏢</div>
+                    <h3>Corporate Partnership</h3>
+                    <p>Partner with us for CSR initiatives. We create custom programs that align with your company values while creating measurable social impact in the communities we serve.</p>
+                    <button class="btn btn-primary">Partner With Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>Ready to Be Part of the Change?</h2>
+            <p>Together, we can transform lives and build stronger communities. Whether you contribute time, resources, or voice – your action today creates opportunity for tomorrow.</p>
+            <button class="btn btn-secondary">Get Started Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About InAmigos</h4>
+                <p>InAmigos is committed to creating sustainable social change through community-driven education, healthcare, and livelihood initiatives. Founded in 2015, we've impacted over 50,000 lives.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/inamigos" title="Facebook" target="_blank">f</a>
+                    <a href="https://twitter.com/inamigos" title="Twitter" target="_blank">𝕏</a>
+                    <a href="https://instagram.com/inamigos" title="Instagram" target="_blank">📷</a>
+                    <a href="https://linkedin.com/company/inamigos" title="LinkedIn" target="_blank">in</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#projects">Our Projects</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#engage">Get Involved</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Our Initiatives</h4>
+                <ul>
+                    <li><a href="#">Digital Literacy Program</a></li>
+                    <li><a href="#">Community Health Initiative</a></li>
+                    <li><a href="#">Green Earth Campaign</a></li>
+                    <li><a href="#">Women Empowerment</a></li>
+                    <li><a href="#">Youth Leadership Program</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <p><strong>📍 Address:</strong><br>InAmigos Community Center<br>Prayagraj, Uttar Pradesh 211001, India</p>
+                <p><strong>📧 Email:</strong><br>info@inamigos.org<br>contact@inamigos.org</p>
+                <p><strong>📱 Phone:</strong><br>+91 8765-432-109<br>(Mon-Fri, 9AM-6PM IST)</p>
+                <p><strong>🌐 Website:</strong><br>www.inamigos.org</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 InAmigos - Empowering Communities, Transforming Lives. All rights reserved.<br>
+            <a href="#" style="color: rgba(255, 255, 255, 0.7);">Privacy Policy</a> | 
+            <a href="#" style="color: rgba(255, 255, 255, 0.7);">Terms of Service</a> | 
+            <a href="#" style="color: rgba(255, 255, 255, 0.7);">Contact Us</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
